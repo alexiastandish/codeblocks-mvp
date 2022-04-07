@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { PropsWithChildren } from 'react';
+import { Suspense } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AuthProvider from './auth/AuthProvider';
+import CustomThemeProvider from './theme/CustomThemeProvider';
+import Routes from './routes/Routes';
+import Loading from 'components/common/Loading/Loading';
 
-function App() {
+function App(props: PropsWithChildren<{}>) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<Loading />}>
+      <Router>
+        <AuthProvider>
+          <CustomThemeProvider>
+            <Routes />
+          </CustomThemeProvider>
+        </AuthProvider>
+      </Router>
+    </Suspense>
   );
 }
-
 export default App;
