@@ -12,7 +12,6 @@ export const openFile = (node: TreeViewNode) => (dispatch: AppDispatch, getState
   const {
     files: { activeFilesIds },
   } = getState();
-
   if (!activeFilesIds.includes(id)) {
     dispatch(addActiveFile(id));
   }

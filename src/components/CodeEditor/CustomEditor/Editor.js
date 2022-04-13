@@ -3,9 +3,9 @@ import { EditorState, EditorView, basicSetup } from '@codemirror/basic-setup';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 // import { ViewPlugin } from '@codemirror/view'
-import { getLanguage } from './utils';
-import { extensions } from './utils/extensions';
-import { updateEditor } from './utils/update-editor';
+import { getLanguage } from 'utils/get-language';
+import { extensions } from 'utils/extensions';
+import { updateEditor } from 'utils/update-editor';
 
 export default function Editor({ value, language, onChange }) {
   const [view, setView] = useState('');

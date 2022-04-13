@@ -1,6 +1,7 @@
 import { v4 as makeId } from 'uuid';
 
 export const readFile = (file) => {
+  console.log('file', file);
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsText(file);

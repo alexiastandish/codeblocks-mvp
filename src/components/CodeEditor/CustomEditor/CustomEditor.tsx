@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from 'store/hooks';
 import { updateFileCode } from 'store/slices/files/files';
 import { UserFile } from 'types/Files';
 import Loading from 'components/common/Loading/Loading';
-// import Editor from './Editor';
+import Editor from './Editor';
 
 type CustomEditorProps = {
   activeFile: UserFile;
@@ -58,8 +58,7 @@ const CustomEditor = (props: CustomEditorProps) => {
     //   loading={<Loading />}
     //   onChange={onChange}
     // />
-    // <Editor onChange={onChange} value={code} language={language} />
-    <div>editor placeholder</div>
+    <Editor onChange={onChange} value={code} language={language} />
   );
 };
 
